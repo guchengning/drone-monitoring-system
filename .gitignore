@@ -1,0 +1,22 @@
+# 虚拟环境
+venv/
+env/
+
+# 缓存文件
+__pycache__/
+*.pyc
+
+# 数据文件
+*.csv
+*.json
+
+# IDE文件
+.vscode/
+.idea/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 部署文件
+streamlit.log
