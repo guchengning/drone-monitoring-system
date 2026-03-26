@@ -41,30 +41,12 @@ if menu == "航线规划":
     with col1:
         st.subheader("地图展示")
         
-        # 使用Plotly创建地图
-        fig = go.Figure()
-        
-        # 添加南京科技职业学院位置
-        fig.add_trace(go.Scattermapbox(
-            lat=[32.3904],
-            lon=[118.7128],
-            mode='markers',
-            marker=dict(size=15, color='red'),
-            name='南京科技职业学院',
-            hovertext=['南京科技职业学院']
-        ))
-        
-        fig.update_layout(
-            mapbox=dict(
-                style='open-street-map',
-                center=dict(lat=32.3904, lon=118.7128),
-                zoom=15
-            ),
-            height=600,
-            margin=dict(l=0, r=0, t=0, b=0)
-        )
-        
-        st.plotly_chart(fig, use_container_width=True)
+        # 使用Streamlit内置地图
+        map_data = pd.DataFrame({
+            'lat': [32.3904],
+            'lon': [118.7128]
+        })
+        st.map(map_data, zoom=15)
     
     with col2:
         st.subheader("航线设置")
